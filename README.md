@@ -1,5 +1,11 @@
-# Password Generator Starter Code
+# Challenge 3: Password Generator Starter Code
 
+## **Link** to web application: https://alinz07.github.io/challenge-2-portfolio/
+## **Link** to project repository: https://github.com/alinz07/challenge-2-portfolio.git
+
+## **What and Why**
+The purpose of this project is to create a portfolio so that hiring managers can review samples of my work and assess if my knowledge and skills fulfill a position's requirements. I expect my portfolio and the web application to evolve as I progress through the coding bootcamp. This project uses strictly html and advanced css.
+## Challenge Criteria
 AS AN employee with access to sensitive data
 I WANT to randomly generate a password that meets certain criteria
 SO THAT I can create a strong password that provides greater security
@@ -19,3 +25,6 @@ WHEN all prompts are answered
 THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
+
+# Screenshot of web application
+![gif-of-webapp](./pwgen-gif.gif)
