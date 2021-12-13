@@ -84,8 +84,24 @@ var generatePassword = function() {
     } //end of criteriaTypes() function
 
   password+=criteriaTypes();
-  //start here to finish up once commit changes
-  //more code to add more characters from options to criteria word to reach the desired pw length
+
+  //remove all the commas from options array
+  charOptions=[];
+  for (i=0; i<options.length; i++) {
+    if (options[i] === ',') {
+      continue;
+    }
+    else {
+      charOptions+=options[i];
+    }
+  }
+
+  var charToGo = pwLength - password.length;
+
+  for (let i=0; i<charToGo; i++) {
+    password+=charOptions[Math.floor(Math.random() * charOptions.length)];
+  }
+
   return password;
 } //end of generatePassword() function 
 
