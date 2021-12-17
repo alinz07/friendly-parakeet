@@ -23,6 +23,7 @@ var generatePassword = function() {
   }
 
   var criteriaTypes = function() {
+    //use a while loop to ensure they choose at least one pw criteria
     while (options.length === 0) {
       var criteriaWord=""
       //window alert that they must choose one of the following 4 character types to include
@@ -32,6 +33,9 @@ var generatePassword = function() {
       if (window.prompt("Enter '1' to include lowercase letters, or leave blank and select okay")=== '1') {
         window.alert("Thank you, lowercase letters will be included.");
         //add all lowercase letters to the array 'options' so that we can pull the rest of the characters to fit the pwlength
+        //I learned that I should've used options.concat(lowercase), because this way, I ended up with commas as strings in my 
+        //options array and passwords were filled with commas. I use a for loop below to get rid of the commas instead of refactoring
+        //because I got it to work and need to move on.
         options+=lowerCase;
         //add at least one of the lowercase letters to the criteriaWord to be add to password
         criteriaWord += lowerCase[Math.floor(Math.random() * lowerCase.length)];
@@ -83,9 +87,10 @@ var generatePassword = function() {
 
     } //end of criteriaTypes() function
 
+    //Concatenate the string returned by criteriaTypes() to the empty variable password. so far, password contains at least one of each selected criteria
   password+=criteriaTypes();
 
-  //remove all the commas from options array
+  //This is the for loop I could've gotten rid of had I used the array1.concat(array2) method
   charOptions=[];
   for (i=0; i<options.length; i++) {
     if (options[i] === ',') {
@@ -96,6 +101,8 @@ var generatePassword = function() {
     }
   }
 
+  //this is how I set the number of iterations in the following for loop to randomly get the rest of the characters for the
+  //password using the types of characters selected by the user.
   var charToGo = pwLength - password.length;
 
   for (let i=0; i<charToGo; i++) {

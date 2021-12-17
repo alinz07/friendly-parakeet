@@ -52,7 +52,7 @@ I ran into another issue when concatenating lists to the options list so I could
 ## **Things I learned**
 * What the .value property means and how documentQuery links it to html elements. At first I was confused how the writePassword() function was "returning" something in the form of a generated password.
 
-* I learned that when you concatenate lists into one main list and then try to index it, the commas that separated the values of the original lists will have their own index.
+* I learned that when you use the addition operator on lists and then try to index it, the commas that separated the values of the original lists will have their own index and are part of the strings. I should've used the array1.concat(array2) method.
 <br/>
 <br/>
 
